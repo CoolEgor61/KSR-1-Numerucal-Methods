@@ -63,12 +63,12 @@ namespace Graph {
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::CheckBox^ checkBox2;
 
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox1;
 
 
 
-	private: System::Windows::Forms::CheckBox^ checkBox5;
+
+
+
 
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox5;
@@ -132,9 +132,6 @@ namespace Graph {
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->checkBox5 = (gcnew System::Windows::Forms::CheckBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -171,9 +168,9 @@ namespace Graph {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(12, 171);
+			this->button1->Location = System::Drawing::Point(12, 148);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(108, 47);
+			this->button1->Size = System::Drawing::Size(108, 70);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Вычислить";
 			this->button1->UseVisualStyleBackColor = true;
@@ -355,33 +352,6 @@ namespace Graph {
 			this->checkBox2->Text = L"Рисовать глобальную погрешность";
 			this->checkBox2->UseVisualStyleBackColor = true;
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(234, 48);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(156, 13);
-			this->label1->TabIndex = 25;
-			this->label1->Text = L"Контроль глоб. погрешности:";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(237, 64);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(153, 20);
-			this->textBox1->TabIndex = 26;
-			this->textBox1->Text = L"0,00000001";
-			// 
-			// checkBox5
-			// 
-			this->checkBox5->AutoSize = true;
-			this->checkBox5->Location = System::Drawing::Point(15, 148);
-			this->checkBox5->Name = L"checkBox5";
-			this->checkBox5->Size = System::Drawing::Size(207, 17);
-			this->checkBox5->TabIndex = 30;
-			this->checkBox5->Text = L"Контролировать глоб. погрешность";
-			this->checkBox5->UseVisualStyleBackColor = true;
-			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
@@ -397,7 +367,7 @@ namespace Graph {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(153, 20);
 			this->textBox5->TabIndex = 34;
-			this->textBox5->Text = L"0,01";
+			this->textBox5->Text = L"0,0000000000000001";
 			// 
 			// label4
 			// 
@@ -420,18 +390,18 @@ namespace Graph {
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(238, 132);
+			this->label12->Location = System::Drawing::Point(234, 48);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(31, 13);
+			this->label12->Size = System::Drawing::Size(34, 13);
 			this->label12->TabIndex = 37;
-			this->label12->Text = L"xmax";
+			this->label12->Text = L"xmax:";
 			// 
 			// textBox8
 			// 
 			this->textBox8->Enabled = false;
-			this->textBox8->Location = System::Drawing::Point(275, 129);
+			this->textBox8->Location = System::Drawing::Point(237, 64);
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(100, 20);
+			this->textBox8->Size = System::Drawing::Size(153, 20);
 			this->textBox8->TabIndex = 38;
 			this->textBox8->Text = L"0,015";
 			// 
@@ -470,9 +440,9 @@ namespace Graph {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(123, 171);
+			this->button2->Location = System::Drawing::Point(123, 148);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(108, 47);
+			this->button2->Size = System::Drawing::Size(108, 70);
 			this->button2->TabIndex = 42;
 			this->button2->Text = L"Нарисовать";
 			this->button2->UseVisualStyleBackColor = true;
@@ -540,9 +510,6 @@ namespace Graph {
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->checkBox5);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->checkBox2);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->textBox7);
@@ -581,11 +548,6 @@ namespace Graph {
 			u2_out = u2 + h * ((499.995 * h / 2. * (-500.005 * u1 + 499.995 * u2) + (1. + h / 2. * 500.005) * (499.995 * u1 - 500.005 * u2)) / ((1. + h / 2. * 500.005) * (1. + h / 2. * 500.005) - 499.995 * 499.995 * h * h / 4.));
 		}
 
-		double mymax(double& a, double& b) {
-			if (a >= b) return a;
-			else return b;
-		}
-
 		PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
 		PointPairList^ f2_list = gcnew ZedGraph::PointPairList();
 		PointPairList^ f3_list = gcnew ZedGraph::PointPairList();
@@ -598,7 +560,6 @@ namespace Graph {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		// Очистка предыдущих данных
-		button1->Enabled = false;
 		dataGridView1->Rows->Clear();
 		f1_list->Clear();
 		f2_list->Clear();
@@ -613,20 +574,20 @@ namespace Graph {
 		double eps = Convert::ToDouble(textBox5->Text); // Точность выхода на нижнюю границу
 		double egr = Convert::ToDouble(textBox4->Text); // Точность выхода на правую границу
 		double xmax = Convert::ToDouble(textBox8->Text); // xmax
-		double ctrlGlobal = Convert::ToDouble(textBox1->Text); // Контроль глобальной погрешности
 
 		double x = 0;
 		double v1n = u10;
 		double v2n = u20;
 		double c2 = (u10 + u20) / 2.;
-		double c1 = u20 - c2;
+		double c1 = (u20 - u10) / 2.;
 		//double c2 = 3;
 		//double c1 = 10;
 		double E1 = 0, E2 = 0;
 		double u1 = 0, u2 = 0;
 		double maxerr = 0, xerr = 0;
 		double maxerrpogr = 0, xerrpogr = 0;
-
+		double er = 0, ex = 0;
+			 
 		// Добавление первой точки
 		i = 0;
 		dataGridView1->Rows->Add();
@@ -650,7 +611,7 @@ namespace Graph {
 
 		// Список точек
 		if (radioButton1->Checked) {
-			while (mymax(v1n, v2n) > eps)
+			while (std::max(v1n, v2n) > eps)
 			{
 				RK2_system(xprev, h, v1n, v2n, v1n, v2n);
 				sol(x,c1,c2, u1, u2);
@@ -659,22 +620,25 @@ namespace Graph {
 				E1 = u1 - v1n;
 				E2 = u2 - v2n;
 
-				if (std::max(fabs(E1),fabs(E2)) > maxerr)
+				er = std::max(fabs(E1), fabs(E2));
+				ex = exp(-1000. * x);
+
+				if (er > maxerr)
 				{
-					maxerr = std::max(fabs(E1), fabs(E2));
+					maxerr = er;
 					xerr = x;
 				}
 
-				if (exp(-1000. * x) > 1e-12) {
-					if (std::max(fabs(E1), fabs(E2)) > maxerrpogr)
+				if (ex > 1e-12) {
+					if (er > maxerrpogr)
 					{
-						maxerrpogr = std::max(fabs(E1), fabs(E2));
+						maxerrpogr = er;
 						xerrpogr = x;
 					}
 				}
 
 
-				if (exp(-1000. * x) < 1e-12 && i % 100 == 0) h = h * 1.5;
+				if (ex < 1e-12 && i % 100 == 0) h = h * 1.0125;
 
 					f1_list->Add(x, v1n);
 					f2_list->Add(x, v2n);
@@ -708,21 +672,24 @@ namespace Graph {
 				E1 = u1 - v1n;
 				E2 = u2 - v2n;
 
-				if (std::max(fabs(E1), fabs(E2)) > maxerr)
+				er = std::max(fabs(E1), fabs(E2));
+				ex = exp(-1000. * x);
+
+				if (er > maxerr)
 				{
-					maxerr = std::max(fabs(E1), fabs(E2));
+					maxerr = er;
 					xerr = x;
 				}
 
-				if (exp(-1000. * x) > 1e-12) {
-					if (std::max(fabs(E1), fabs(E2)) > maxerrpogr)
+				if (ex > 1e-12) {
+					if (er > maxerrpogr)
 					{
-						maxerrpogr = std::max(fabs(E1), fabs(E2));
+						maxerrpogr = er;
 						xerrpogr = x;
 					}
 				}
 
-				if (exp(-1000. * x) < 1e-12 && i % 100 == 0) h = h * 1.5;
+				if (ex < 1e-12 && i % 100 == 0) h = h * 1.0125;
 
 					f1_list->Add(x, v1n);
 					f2_list->Add(x, v2n);
@@ -788,7 +755,6 @@ namespace Graph {
 			out << "Макс. модуль глоб. погрешности на погранслое: " << maxerrpogr << " в точке x = " << xerrpogr << std::endl;
 		}
 		out.close();
-		button1->Enabled = true;
 	}
 private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (radioButton1->Checked)
