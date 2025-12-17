@@ -50,6 +50,12 @@ namespace Graph {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ U_2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ E_1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ E_2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ F_12;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ F_22;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ OLP;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ h;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ C2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::TextBox^  textBox3;
 	private: System::Windows::Forms::Label^ label6;
@@ -85,6 +91,11 @@ namespace Graph {
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::CheckBox^ checkBox3;
+	private: System::Windows::Forms::Label^ label18;
 
 
 
@@ -120,6 +131,12 @@ namespace Graph {
 			this->F_2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->E_1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->E_2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->F_12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->F_22 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->OLP = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->h = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->C1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->C2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -143,10 +160,15 @@ namespace Graph {
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
+			this->label18 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
@@ -179,9 +201,9 @@ namespace Graph {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(14) {
 				this->n, this->X,
-					this->U_1, this->U_2, this->F_1, this->F_2, this->E_1, this->E_2
+					this->U_1, this->U_2, this->F_1, this->F_2, this->E_1, this->E_2, this->F_12, this->F_22, this->OLP, this->h, this->C1, this->C2
 			});
 			this->dataGridView1->Location = System::Drawing::Point(12, 224);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -245,6 +267,48 @@ namespace Graph {
 			this->E_2->ReadOnly = true;
 			this->E_2->Width = 135;
 			// 
+			// F_12
+			// 
+			this->F_12->HeaderText = L"v1_2";
+			this->F_12->Name = L"F_12";
+			this->F_12->ReadOnly = true;
+			this->F_12->Width = 135;
+			// 
+			// F_22
+			// 
+			this->F_22->HeaderText = L"v2_2";
+			this->F_22->Name = L"F_22";
+			this->F_22->ReadOnly = true;
+			this->F_22->Width = 135;
+			// 
+			// OLP
+			// 
+			this->OLP->HeaderText = L"ОЛП";
+			this->OLP->Name = L"OLP";
+			this->OLP->ReadOnly = true;
+			this->OLP->Width = 135;
+			// 
+			// h
+			// 
+			this->h->HeaderText = L"h";
+			this->h->Name = L"h";
+			this->h->ReadOnly = true;
+			this->h->Width = 135;
+			// 
+			// C1
+			// 
+			this->C1->HeaderText = L"C_*2";
+			this->C1->Name = L"C1";
+			this->C1->ReadOnly = true;
+			this->C1->Width = 50;
+			// 
+			// C2
+			// 
+			this->C2->HeaderText = L"C_/2";
+			this->C2->Name = L"C2";
+			this->C2->ReadOnly = true;
+			this->C2->Width = 50;
+			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
@@ -303,9 +367,9 @@ namespace Graph {
 			this->label10->AutoSize = true;
 			this->label10->Location = System::Drawing::Point(12, 79);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(25, 13);
+			this->label10->Size = System::Drawing::Size(31, 13);
 			this->label10->TabIndex = 18;
-			this->label10->Text = L"u10";
+			this->label10->Text = L"u1(0)";
 			// 
 			// textBox6
 			// 
@@ -320,9 +384,9 @@ namespace Graph {
 			this->label11->AutoSize = true;
 			this->label11->Location = System::Drawing::Point(114, 79);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(25, 13);
+			this->label11->Size = System::Drawing::Size(31, 13);
 			this->label11->TabIndex = 20;
-			this->label11->Text = L"u20";
+			this->label11->Text = L"u2(0)";
 			// 
 			// textBox7
 			// 
@@ -367,7 +431,7 @@ namespace Graph {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(153, 20);
 			this->textBox5->TabIndex = 34;
-			this->textBox5->Text = L"0,0000000000000001";
+			this->textBox5->Text = L"0,00000000000001";
 			// 
 			// label4
 			// 
@@ -392,9 +456,9 @@ namespace Graph {
 			this->label12->AutoSize = true;
 			this->label12->Location = System::Drawing::Point(234, 48);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(34, 13);
+			this->label12->Size = System::Drawing::Size(92, 13);
 			this->label12->TabIndex = 37;
-			this->label12->Text = L"xmax:";
+			this->label12->Text = L"Правая граница:";
 			// 
 			// textBox8
 			// 
@@ -450,6 +514,8 @@ namespace Graph {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->label18);
+			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->Controls->Add(this->label17);
 			this->groupBox1->Controls->Add(this->label16);
 			this->groupBox1->Controls->Add(this->label15);
@@ -461,6 +527,14 @@ namespace Graph {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Справка:";
 			this->groupBox1->Enter += gcnew System::EventHandler(this, &MyForm::groupBox1_Enter);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(6, 120);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(0, 13);
+			this->label1->TabIndex = 4;
 			// 
 			// label17
 			// 
@@ -494,11 +568,49 @@ namespace Graph {
 			this->label14->Size = System::Drawing::Size(0, 13);
 			this->label14->TabIndex = 0;
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(237, 145);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(153, 20);
+			this->textBox1->TabIndex = 44;
+			this->textBox1->Text = L"0,0001";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(234, 129);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(151, 13);
+			this->label2->TabIndex = 45;
+			this->label2->Text = L"Контроль лок. погрешности:";
+			// 
+			// checkBox3
+			// 
+			this->checkBox3->AutoSize = true;
+			this->checkBox3->Location = System::Drawing::Point(237, 171);
+			this->checkBox3->Name = L"checkBox3";
+			this->checkBox3->Size = System::Drawing::Size(202, 17);
+			this->checkBox3->TabIndex = 46;
+			this->checkBox3->Text = L"Контролировать лок. погрешность";
+			this->checkBox3->UseVisualStyleBackColor = true;
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(7, 88);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(0, 13);
+			this->label18->TabIndex = 5;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1193, 588);
+			this->Controls->Add(this->checkBox3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->radioButton2);
@@ -526,7 +638,7 @@ namespace Graph {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->zedGraphControl1);
 			this->Name = L"MyForm";
-			this->Text = L"KSR 1 RK2";
+			this->Text = L"Petrov Egor 3823B1PMop3 KSR 1 RK2 formula 16.61";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -574,31 +686,48 @@ namespace Graph {
 		double eps = Convert::ToDouble(textBox5->Text); // Точность выхода на нижнюю границу
 		double egr = Convert::ToDouble(textBox4->Text); // Точность выхода на правую границу
 		double xmax = Convert::ToDouble(textBox8->Text); // xmax
+		double ctrlLoc = Convert::ToDouble(textBox1->Text); // Контроль лок. погр
 
-		double x = 0;
+		double x = 0.;
 		double v1n = u10;
 		double v2n = u20;
 		double c2 = (u10 + u20) / 2.;
 		double c1 = (u20 - u10) / 2.;
 		//double c2 = 3;
 		//double c1 = 10;
-		double E1 = 0, E2 = 0;
-		double u1 = 0, u2 = 0;
-		double maxerr = 0, xerr = 0;
-		double maxerrpogr = 0, xerrpogr = 0;
-		double er = 0, ex = 0;
+		double E1 = 0., E2 = 0.;
+		double u1 = 0., u2 = 0.;
+		double maxerr = 0., xerr = 0.;
+		double maxerrpogr = 0., xerrpogr = 0.;
+		double er = 0., ex = 0.;
+		bool accept = 1;
+		double maxolp = 0.;
+		double xolp = 0.;
+		double v1tmp = 0, v2tmp = 0, v1half = 0, v2half = 0, v1roof = 0, v2roof = 0;
+		double abss = 0.0, s1 = 0, s2 = 0;
+		double e3 = 0;
+		int C1 = 0, C2 = 0;
 			 
 		// Добавление первой точки
 		i = 0;
 		dataGridView1->Rows->Add();
 		dataGridView1->Rows[i]->Cells[0]->Value = i;
-		dataGridView1->Rows[i]->Cells[1]->Value = x;
-		dataGridView1->Rows[i]->Cells[2]->Value = u10;
-		dataGridView1->Rows[i]->Cells[3]->Value = u20;  
-		dataGridView1->Rows[i]->Cells[4]->Value = v1n;
-		dataGridView1->Rows[i]->Cells[5]->Value = v2n;  
-		dataGridView1->Rows[i]->Cells[6]->Value = u10 - v1n ;  
-		dataGridView1->Rows[i]->Cells[7]->Value = u20 - v2n;  
+		dataGridView1->Rows[i]->Cells[1]->Value = Math::Round(x,15);
+		dataGridView1->Rows[i]->Cells[2]->Value = Math::Round(u10,15);
+		dataGridView1->Rows[i]->Cells[3]->Value = Math::Round(u20,15);
+		dataGridView1->Rows[i]->Cells[4]->Value = Math::Round(v1n,15);
+		dataGridView1->Rows[i]->Cells[5]->Value = Math::Round(v2n,15);
+		dataGridView1->Rows[i]->Cells[6]->Value = Math::Round(u10 - v1n,15);
+		dataGridView1->Rows[i]->Cells[7]->Value = Math::Round(u20 - v2n,15);
+		if (checkBox3->Checked)
+		{
+			dataGridView1->Rows[i]->Cells[8]->Value = Math::Round(v1roof, 15);
+			dataGridView1->Rows[i]->Cells[9]->Value = Math::Round(v2roof, 15);
+			dataGridView1->Rows[i]->Cells[10]->Value = Math::Round(0, 15);
+			dataGridView1->Rows[i]->Cells[11]->Value = Math::Round(0, 15);
+			dataGridView1->Rows[i]->Cells[12]->Value = Math::Round(0, 15);
+			dataGridView1->Rows[i]->Cells[13]->Value = Math::Round(0, 15);
+		}
 		f1_list->Add(x, v1n);
 		f2_list->Add(x, v2n);
 		f3_list->Add(x, u10);
@@ -611,34 +740,92 @@ namespace Graph {
 
 		// Список точек
 		if (radioButton1->Checked) {
+			if (!(checkBox3->Checked)) {
+				dataGridView1->Columns[8]->Visible = false;
+				dataGridView1->Columns[9]->Visible = false;
+				dataGridView1->Columns[10]->Visible = false;
+				dataGridView1->Columns[11]->Visible = false;
+				dataGridView1->Columns[12]->Visible = false;
+				dataGridView1->Columns[13]->Visible = false;
+			}
+			if ((checkBox3->Checked)) {
+				dataGridView1->Columns[8]->Visible = true;
+				dataGridView1->Columns[9]->Visible = true;
+				dataGridView1->Columns[10]->Visible = true;
+				dataGridView1->Columns[11]->Visible = true;
+				dataGridView1->Columns[12]->Visible = false;
+				dataGridView1->Columns[13]->Visible = false;
+			}
 			while (std::max(v1n, v2n) > eps)
 			{
-				RK2_system(xprev, h, v1n, v2n, v1n, v2n);
+				accept = 1;
+				RK2_system(xprev, h, v1n, v2n, v1tmp, v2tmp);
 				sol(x,c1,c2, u1, u2);
 
-				// Глобальная погрешность
-				E1 = u1 - v1n;
-				E2 = u2 - v2n;
+				if (checkBox3->Checked) {
+					RK2_system(xprev, h / 2, v1n, v2n, v1half, v2half);
+					RK2_system(xprev + h / 2, h / 2, v1half, v2half, v1roof, v2roof);
+					// Оценка погрешности
+					s1 = (v1roof - v1tmp) / 3.0;
+					s2 = (v2roof - v2tmp) / 3.0;
 
-				er = std::max(fabs(E1), fabs(E2));
-				ex = exp(-1000. * x);
+					// Максимальная оценка погрешности
+					abss = std::max(fabs(s1), fabs(s2));
 
-				if (er > maxerr)
-				{
-					maxerr = er;
-					xerr = x;
-				}
-
-				if (ex > 1e-12) {
-					if (er > maxerrpogr)
+					if (abss > ctrlLoc)
 					{
-						maxerrpogr = er;
-						xerrpogr = x;
+						h = h / 2.;
+						accept = 0;
+						x = xprev + h;
+						C2++;
+					}
+					else if (abss < ctrlLoc / 8.0)  // Правильный порог
+					{
+						v1n = v1tmp;
+						v2n = v2tmp;
+						h = 2. * h;
+						C1++;
+					}
+					else
+					{
+						v1n = v1tmp;
+						v2n = v2tmp;
 					}
 				}
+				else {
+					v1n = v1tmp;
+					v2n = v2tmp;
+					if (ex < 1e-12 && i % 100 == 0) h = h * 1.0125;
+				}
 
+				if (accept) {
+					// Глобальная погрешность
+					E1 = u1 - v1n;
+					E2 = u2 - v2n;
 
-				if (ex < 1e-12 && i % 100 == 0) h = h * 1.0125;
+					er = std::max(fabs(E1), fabs(E2));
+					ex = exp(-1000. * x);
+					if (checkBox3->Checked) {
+						e3 = abss * 4.0;
+						if (fabs(e3) > maxolp) {
+							maxolp = fabs(e3);
+							xolp = x;
+						}
+					}
+
+					if (er > maxerr)
+					{
+						maxerr = er;
+						xerr = x;
+					}
+
+					if (ex > 1e-12) {
+						if (er > maxerrpogr)
+						{
+							maxerrpogr = er;
+							xerrpogr = x;
+						}
+					}
 
 					f1_list->Add(x, v1n);
 					f2_list->Add(x, v2n);
@@ -649,47 +836,119 @@ namespace Graph {
 					//Печать в таблицу
 					dataGridView1->Rows->Add();
 					dataGridView1->Rows[i]->Cells[0]->Value = i;
-					dataGridView1->Rows[i]->Cells[1]->Value = x;
-					dataGridView1->Rows[i]->Cells[2]->Value = u1;
-					dataGridView1->Rows[i]->Cells[3]->Value = u2;
-					dataGridView1->Rows[i]->Cells[4]->Value = v1n;
-					dataGridView1->Rows[i]->Cells[5]->Value = v2n;
-					dataGridView1->Rows[i]->Cells[6]->Value = E1;
-					dataGridView1->Rows[i]->Cells[7]->Value = E2;
+					dataGridView1->Rows[i]->Cells[1]->Value = Math::Round(x, 15);
+					dataGridView1->Rows[i]->Cells[2]->Value = Math::Round(u1, 15);
+					dataGridView1->Rows[i]->Cells[3]->Value = Math::Round(u2, 15);
+					dataGridView1->Rows[i]->Cells[4]->Value = Math::Round(v1n, 15);
+					dataGridView1->Rows[i]->Cells[5]->Value = Math::Round(v2n, 15);
+					dataGridView1->Rows[i]->Cells[6]->Value = Math::Round(E1, 15);
+					dataGridView1->Rows[i]->Cells[7]->Value = Math::Round(E2, 15);
+					if (checkBox3->Checked)
+					{
+						dataGridView1->Rows[i]->Cells[8]->Value = Math::Round(v1roof, 15);
+						dataGridView1->Rows[i]->Cells[9]->Value = Math::Round(v2roof, 15);
+						dataGridView1->Rows[i]->Cells[10]->Value = Math::Round(e3, 15);
+						dataGridView1->Rows[i]->Cells[11]->Value = Math::Round(x-xprev, 15);
+						dataGridView1->Rows[i]->Cells[12]->Value = C1;
+						dataGridView1->Rows[i]->Cells[13]->Value = C2;
+					}
 					xprev = x;
 					x = x + h;
+					C1 = 0;
+					C2 = 0;
 					i++;
+				}
 			}
 		}
 		else if (radioButton2->Checked)
 		{
+			if (!(checkBox3->Checked)) {
+				dataGridView1->Columns[8]->Visible = false;
+				dataGridView1->Columns[9]->Visible = false;
+				dataGridView1->Columns[10]->Visible = false;
+				dataGridView1->Columns[11]->Visible = false;
+				dataGridView1->Columns[12]->Visible = false;
+				dataGridView1->Columns[13]->Visible = false;
+			}
+			if ((checkBox3->Checked)) {
+				dataGridView1->Columns[8]->Visible = true;
+				dataGridView1->Columns[9]->Visible = true;
+				dataGridView1->Columns[10]->Visible = true;
+				dataGridView1->Columns[11]->Visible = true;
+				dataGridView1->Columns[12]->Visible = false;
+				dataGridView1->Columns[13]->Visible = false;
+			}
 			while (x < xmax - egr)
 			{
-				RK2_system(xprev, h, v1n, v2n, v1n, v2n);
+				accept = 1;
+				RK2_system(xprev, h, v1n, v2n, v1tmp, v2tmp);
 				sol(x, c1, c2, u1, u2);
 
-				// Глобальная погрешность
-				E1 = u1 - v1n;
-				E2 = u2 - v2n;
+				if (checkBox3->Checked) {
+					RK2_system(xprev, h / 2, v1n, v2n, v1half, v2half);
+					RK2_system(xprev + h / 2, h / 2, v1half, v2half, v1roof, v2roof);
+					// Оценка погрешности
+					s1 = (v1roof - v1tmp) / 3.0;
+					s2 = (v2roof - v2tmp) / 3.0;
 
-				er = std::max(fabs(E1), fabs(E2));
-				ex = exp(-1000. * x);
+					// Максимальная оценка погрешности
+					abss = std::max(fabs(s1), fabs(s2));
 
-				if (er > maxerr)
-				{
-					maxerr = er;
-					xerr = x;
-				}
-
-				if (ex > 1e-12) {
-					if (er > maxerrpogr)
+					if (abss > ctrlLoc)
 					{
-						maxerrpogr = er;
-						xerrpogr = x;
+						h = h / 2.;
+						accept = 0;
+						x = xprev + h;
+						C2++;
+					}
+					else if (abss < ctrlLoc / 8.0) 
+					{
+						v1n = v1tmp;
+						v2n = v2tmp;
+						h = 2. * h;
+						C1++;
+					}
+					else
+					{
+						v1n = v1tmp;
+						v2n = v2tmp;
 					}
 				}
+				else {
+					v1n = v1tmp;
+					v2n = v2tmp;
+					if (ex < 1e-12 && i % 100 == 0) h = h * 1.0125;
+				}
 
-				if (ex < 1e-12 && i % 100 == 0) h = h * 1.0125;
+				if (accept) {
+					// Глобальная погрешность
+					E1 = u1 - v1n;
+					E2 = u2 - v2n;
+
+					er = std::max(fabs(E1), fabs(E2));
+					ex = exp(-1000. * x);
+
+					if (er > maxerr)
+					{
+						maxerr = er;
+						xerr = x;
+					}
+
+					if (ex > 1e-12) {
+						if (er > maxerrpogr)
+						{
+							maxerrpogr = er;
+							xerrpogr = x;
+						}
+					}
+
+					if (checkBox3->Checked) {
+						e3 = abss * 4.0;
+						if (fabs(e3) > maxolp) {
+							maxolp = fabs(e3);
+							xolp = x;
+						}
+					}
 
 					f1_list->Add(x, v1n);
 					f2_list->Add(x, v2n);
@@ -700,15 +959,26 @@ namespace Graph {
 					//Печать в таблицу
 					dataGridView1->Rows->Add();
 					dataGridView1->Rows[i]->Cells[0]->Value = i;
-					dataGridView1->Rows[i]->Cells[1]->Value = x;
-					dataGridView1->Rows[i]->Cells[2]->Value = u1;
-					dataGridView1->Rows[i]->Cells[3]->Value = u2;
-					dataGridView1->Rows[i]->Cells[4]->Value = v1n;
-					dataGridView1->Rows[i]->Cells[5]->Value = v2n;
-					dataGridView1->Rows[i]->Cells[6]->Value = E1;
-					dataGridView1->Rows[i]->Cells[7]->Value = E2;
+					dataGridView1->Rows[i]->Cells[1]->Value = Math::Round(x, 15);
+					dataGridView1->Rows[i]->Cells[2]->Value = Math::Round(u1, 15);
+					dataGridView1->Rows[i]->Cells[3]->Value = Math::Round(u2, 15);
+					dataGridView1->Rows[i]->Cells[4]->Value = Math::Round(v1n, 15);
+					dataGridView1->Rows[i]->Cells[5]->Value = Math::Round(v2n, 15);
+					dataGridView1->Rows[i]->Cells[6]->Value = Math::Round(E1, 15);
+					dataGridView1->Rows[i]->Cells[7]->Value = Math::Round(E2, 15);
+					if (checkBox3->Checked)
+					{
+						dataGridView1->Rows[i]->Cells[8]->Value = Math::Round(v1roof, 15);
+						dataGridView1->Rows[i]->Cells[9]->Value = Math::Round(v2roof, 15);
+						dataGridView1->Rows[i]->Cells[10]->Value = Math::Round(e3, 15);
+						dataGridView1->Rows[i]->Cells[11]->Value = Math::Round(x - xprev, 15);
+						dataGridView1->Rows[i]->Cells[12]->Value = C1;
+						dataGridView1->Rows[i]->Cells[13]->Value = C2;
+					}
 					xprev = x;
 					x = x + h;
+					C1 = 0;
+					C2 = 0;
 					if (xprev < xmax - egr && x > xmax)
 					{
 						h = xmax - xprev - egr / 2.;
@@ -721,6 +991,18 @@ namespace Graph {
 						E1 = u1 - v1n;
 						E2 = u2 - v2n;
 
+						if (checkBox3->Checked) {
+							RK2_system(xprev, h / 2, v1n, v2n, v1half, v2half);
+							RK2_system(xprev + h / 2, h / 2, v1half, v2half, v1roof, v2roof);
+							// Оценка погрешности
+							s1 = (v1roof - v1tmp) / 3.0;
+							s2 = (v2roof - v2tmp) / 3.0;
+
+							// Максимальная оценка погрешности
+							abss = std::max(fabs(s1), fabs(s2));
+							e3 = abss * 4.0;
+						}
+
 						f1_list->Add(x, v1n);
 						f2_list->Add(x, v2n);
 						f3_list->Add(x, u1);
@@ -730,29 +1012,47 @@ namespace Graph {
 
 						dataGridView1->Rows->Add();
 						dataGridView1->Rows[i]->Cells[0]->Value = i;
-						dataGridView1->Rows[i]->Cells[1]->Value = x;
-						dataGridView1->Rows[i]->Cells[2]->Value = u1;
-						dataGridView1->Rows[i]->Cells[3]->Value = u2;
-						dataGridView1->Rows[i]->Cells[4]->Value = v1n;
-						dataGridView1->Rows[i]->Cells[5]->Value = v2n;
-						dataGridView1->Rows[i]->Cells[6]->Value = E1;
-						dataGridView1->Rows[i]->Cells[7]->Value = E2;
+						dataGridView1->Rows[i]->Cells[1]->Value = Math::Round(x, 15);
+						dataGridView1->Rows[i]->Cells[2]->Value = Math::Round(u1, 15);
+						dataGridView1->Rows[i]->Cells[3]->Value = Math::Round(u2, 15);
+						dataGridView1->Rows[i]->Cells[4]->Value = Math::Round(v1n, 15);
+						dataGridView1->Rows[i]->Cells[5]->Value = Math::Round(v2n, 15);
+						dataGridView1->Rows[i]->Cells[6]->Value = Math::Round(E1, 15);
+						dataGridView1->Rows[i]->Cells[7]->Value = Math::Round(E2, 15);
+						if (checkBox3->Checked)
+						{
+							dataGridView1->Rows[i]->Cells[8]->Value = Math::Round(v1roof, 15);
+							dataGridView1->Rows[i]->Cells[9]->Value = Math::Round(v2roof, 15);
+							dataGridView1->Rows[i]->Cells[10]->Value = Math::Round(e3, 15);
+							dataGridView1->Rows[i]->Cells[11]->Value = Math::Round(x - xprev, 15);
+							dataGridView1->Rows[i]->Cells[12]->Value = 0;
+							dataGridView1->Rows[i]->Cells[13]->Value = 0;
+						}
 					}
 					i++;
+				}
 			}
 		}
-		label14->Text = "Зашли в окрестность нуля: " + Math::Min(u1,u2).ToString();
+		label14->Text = "Зашли в окрестность нуля: " + Math::Min(v1n,v2n).ToString();
 		label15->Text = "Кол-во шагов: " + i.ToString();
 		label16->Text = "Макс. модуль глоб. погрешности: " + maxerr.ToString() + " в точке x = " + xerr.ToString();
 		label17->Text = "Макс. модуль глоб. погрешности на погранслое: " + maxerrpogr.ToString() + " в точке x = " + xerrpogr.ToString();
+		if (checkBox3->Checked) label18->Text = "Макс. модуль ОЛП: " + maxolp.ToString() + " в точке x = " + xolp.ToString();
+		else label18->Text = "";
+		if (radioButton2->Checked) label1->Text = "Зашли в окрестность правой границы: " + (xmax - x).ToString() + " в точке x = " + x.ToString();
+		else label1->Text = "";
 		std::ofstream out;          
 		out.open("info.txt");      
 		if (out.is_open())
 		{
-			out << "Зашли в окрестность нуля: " << Math::Min(u1, u2) << std::endl;
+			double tmp = xmax - x;
+			out << std::fixed << std::setprecision(15);
+			out << "Зашли в окрестность нуля: " << Math::Min(v1n, v2n) << std::endl;
 			out << "Кол-во шагов: " << i << std::endl;
 			out << "Макс. модуль глоб. погрешности: " << maxerr << " в точке x = " << xerr << std::endl;
 			out << "Макс. модуль глоб. погрешности на погранслое: " << maxerrpogr << " в точке x = " << xerrpogr << std::endl;
+			if (checkBox3->Checked) out << "Макс. модуль ОЛП: " << maxolp << " в точке x = " << xolp << std::endl;
+			if (radioButton2->Checked) out << "Зашли в окрестность правой границы: " << tmp << " в точке x = " << x << std::endl;
 		}
 		out.close();
 	}
@@ -783,13 +1083,22 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	panel->CurveList->Clear();
 	if (checkBox2->Checked)
 	{
+		panel->Title->Text = "Глобальная погрешность";
+		panel->XAxis->Title->Text = "X";
+		panel->YAxis->Title->Text = "E";
 		LineItem Curve1 = panel->AddCurve("E1(x)", f5_list, Color::Red, SymbolType::Plus);
 		LineItem Curve2 = panel->AddCurve("E2(x)", f6_list, Color::Blue, SymbolType::Circle);
 	}
 	else {
+		panel->Title->Text = "Численная траектория";
+		panel->XAxis->Title->Text = "X";
+		panel->YAxis->Title->Text = "V";
 		LineItem Curve1 = panel->AddCurve("v1(x)", f1_list, Color::Red, SymbolType::Plus);
 		LineItem Curve2 = panel->AddCurve("v2(x)", f2_list, Color::Blue, SymbolType::Circle);
 		if (checkBox1->Checked) {
+			panel->Title->Text = "Численная и истинная траектории";
+			panel->XAxis->Title->Text = "X";
+			panel->YAxis->Title->Text = "U,V";
 			LineItem Curve3 = panel->AddCurve("u1(x)", f3_list, Color::Black, SymbolType::Square);
 			LineItem Curve4 = panel->AddCurve("u2(x)", f4_list, Color::Brown, SymbolType::Star);
 		}
